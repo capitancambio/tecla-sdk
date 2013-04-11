@@ -33,16 +33,6 @@ public class SwitchEvent {
 	private static int switch_changes;
 	private static int switch_states;
 	
-	public SwitchEvent() {
-		switch_changes = SWITCH_STATES_DEFAULT;
-		switch_states = SWITCH_STATES_DEFAULT;
-	}
-	
-	public SwitchEvent(int mask) {
-		switch_changes = mask;
-		switch_states = ~mask;
-	}
-	
 	public SwitchEvent(Bundle bundle) {
 		switch_changes = bundle.getInt(EXTRA_SWITCH_CHANGES);
 		switch_states = bundle.getInt(EXTRA_SWITCH_STATES);
