@@ -23,8 +23,11 @@ public class SEPManager {
 	}
 
 	public static boolean stop(Context context) {
-		Intent sepIntent = new Intent(SEP_SERVICE);
-		return context.stopService(sepIntent);
+		if (isRunning(context)) {
+			Intent sepIntent = new Intent(SEP_SERVICE);
+			return context.stopService(sepIntent);
+		}
+		return false;
 	}
 
 	private static boolean isRunning(Context context) {
