@@ -8,6 +8,9 @@ android {
         minSdkVersion 5
         targetSdkVersion 10
     }
+    packagingOptions {
+        exclude 'AndroidManifest.xml'
+    }
 
     buildTypes {
         release {
